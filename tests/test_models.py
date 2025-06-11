@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from utils.models import OpenAIModel
+from src.models import OpenAIModel
 
 
 class TestOpenAIModel(unittest.TestCase):

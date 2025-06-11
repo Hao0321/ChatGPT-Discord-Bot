@@ -1,5 +1,5 @@
 import unittest
-from utils.memory import Memory
+from src.memory import Memory
 
 
 class TestMemory(unittest.TestCase):
