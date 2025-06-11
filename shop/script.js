@@ -40,4 +40,20 @@ function renderCart() {
 
 window.addEventListener('DOMContentLoaded', () => {
     renderProducts();
+
 });
+function handleCredentialResponse(response) {
+    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+    document.getElementById('user-name').textContent = payload.name || payload.email;
+    document.getElementById('login-area').style.display = 'none';
+    document.getElementById('logout-area').style.display = 'block';
+}
+
+function signOut() {
+    if (window.google && google.accounts) {
+        google.accounts.id.disableAutoSelect();
+    }
+    document.getElementById('user-name').textContent = '';
+    document.getElementById('login-area').style.display = 'block';
+    document.getElementById('logout-area').style.display = 'none';
+}
