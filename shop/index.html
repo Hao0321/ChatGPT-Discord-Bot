@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shop</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Simple Shop</h1>
+    </header>
+    <section id="add-product">
+        <input type="text" id="product-name" placeholder="Product name">
+        <input type="number" id="product-price" placeholder="Price" step="0.01">
+        <button id="add-product-btn" onclick="addProduct()">Add Product</button>
+    </section>
+    <div id="login-area">
+        <div id="g_id_onload"
+             data-client_id="YOUR_GOOGLE_CLIENT_ID"
+             data-callback="handleCredentialResponse"></div>
+        <div class="g_id_signin" data-type="standard"></div>
+    </div>
+    <div id="logout-area" style="display:none;">
+        Signed in as <span id="user-name"></span>
+        <button id="signout-btn" onclick="signOut()">Sign out</button>
+    </div>
+    <main>
+        <section id="products"></section>
+    </main>
+    <aside id="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+        <p id="cart-total"></p>
+    </aside>
+    <script src="script.js"></script>
+</body>
+</html>
